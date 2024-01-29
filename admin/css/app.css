@@ -1,0 +1,123 @@
+.text-bg-warning {
+  background-color: #F7F5DC;
+  color: #A4875D;
+  padding: 0.5em 1em;
+}
+
+.card-title {
+  color: #606060;
+  font-weight: 600;
+}
+
+.btn-dialog,
+.btn-dialog:hover {
+  background-color: var(--green);
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.ui-dialog {
+  padding: 0;
+  border: none !important;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 730px;
+  width: 100% !important;
+}
+
+.ui-dialog-titlebar {
+  background: none;
+  border: 0 solid rgb(0 0 0 / 10%);
+  border-bottom-width: 1px;
+  font-size: 1.3em;
+}
+
+.filters-types h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.btn-check+.btn,
+.btn-check+.btn:hover {
+  border: 1px solid currentColor;
+  color: #606060;
+}
+
+.btn-check:checked+.btn {
+  background-color: #CAFFE1;
+  color: #0EB255;
+  font-weight: 700;
+}
+
+.filters-footer button.btn.btn-primary {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.card-footer .card-link {
+  color: #00AF4C;
+  font-weight: 700;
+}
+
+.dataTables_wrapper>div.row {
+  margin: 0;
+}
+
+.dropdown-user-img {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+  border-radius: 100%;
+}
+
+.dropdown-menu .dropdown-item .dropdown-item-icon svg {
+  height: 0.9em;
+  width: 0.9em;
+}
+
+.dropdown-menu .dropdown-item {
+  align-items: center;
+  display: flex;
+}
+
+.dropdown-user .dropdown-menu .dropdown-item .dropdown-item-icon {
+  color: #a7aeb8;
+  line-height: 1;
+  margin-right: 0.5rem;
+}
+
+.empty-state {
+  min-height: 30rem;
+}
+
+.border-secondary-subtle {
+  border-color: #D6D6D6 !important;
+}
+
+.refer-row {
+  gap: var(--bs-gutter-y) var(--bs-gutter-x);
+}
+
+.mh-100p {
+  min-height: 100%;
+}
+
+@media (min-width: 576px) {
+  .topbar .dropdown .dropdown-menu {
+    width: auto;
+    min-width: 15rem;
+    right: 0;
+    left: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar-dark .nav-item .nav-link {
+    display: block;
+  }
+
+  .sidebar .nav-item i {
+    margin-bottom: 0.5em;
+    margin-right: 0 !important;
+  }
+}
