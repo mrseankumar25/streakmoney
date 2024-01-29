@@ -24,8 +24,8 @@
     </div>
     <div class="userContent d-flex align-items-center justify-content-end py-1 px-3">
       <ul class="navbar-nav g-2">
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link d-flex align-items-center gap g-2" href="#">
+        <li class="nav-item mx-1">
+          <a class="nav-link wallet-nav-link d-flex align-items-center gap g-2" href="#">
             <i>
               <svg width="1.5em" viewBox="0 0 35 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -33,7 +33,7 @@
                   fill="#00AF4C" />
               </svg>
             </i>
-            <span class="ml-3">$100.00</span>
+            <span class="ml-3 fw-600"><strong>$</strong>100.00</span>
           </a>
         </li>
   
@@ -63,7 +63,7 @@
       </ul>
     </div>
     <aside class="sidebar">
-      <ul class="navbar-nav bg-gradient-primary sidebar-dark accordion" id="accordionSidebar">
+      <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="./index.html">
             <i>
@@ -123,30 +123,28 @@
     </aside>
     <div class="context">
       <div class="container-fluid p-0">
-        <div class="card border-0 shadow mb-4">
+        <div class="card border-0 mb-4">
           <div class="card-body p-0">
             <content-tabs>
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="tab" href="#available">Available</a>
+                  <a class="nav-link active" aria-current="tab" href="#" data-target="#available">Available</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="tab" href="#history">History</a>
+                  <a class="nav-link" aria-current="tab" href="#" data-target="#history">History</a>
                 </li>
               </ul>
               <div class="tab-content p-0 tab-active" id="available">
-                <div class="tab-content_header d-flex px-4 py-2 border-bottom">
+                <div class="tab-content_header d-flex align-items-center justify-content-between border-bottom">
                   <h3>Games</h3>
                   <div class="ml-auto">
-                    <form action="" class="d-flex">
+                    <form action="" class="filter-form">
                       <select id="inputState" class="form-select">
                         <option selected>Sort By</option>
                         <option>...</option>
                       </select>
   
-                      <button type="button"
-                        class="btn btn-dialog d-flex align-items-center justify-content-center rounded-circle ml-3"
-                        data-target="filters">
+                      <button type="button" class="btn btn-dialog" data-target="filters">
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -154,43 +152,66 @@
                             fill="currentColor"></path>
                         </svg>
                       </button>
-                      <div class="dialog p-0" id="filters" title="Filter">
+                      <dialog class="dialog p-0" id="filters" title="Filter">
+                        <div class="card-header">
+                          <h3>Filter</h3>
+                          <div class="closeDialog">
+                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11.9033 9.52832C11.9176 9.54264 11.932 9.56055 11.9463 9.58203C11.9606 9.60352 11.9714 9.625 11.9785 9.64648C12 9.71094 12.0036 9.77539 11.9893 9.83984C11.9821 9.9043 11.9535 9.96159 11.9033 10.0117L10.3242 11.5908C10.2741 11.641 10.2168 11.6696 10.1523 11.6768C10.0879 11.6911 10.0234 11.6875 9.95898 11.666C9.9375 11.6589 9.91602 11.6481 9.89453 11.6338C9.87305 11.6195 9.85514 11.6051 9.84082 11.5908L6.5 8.25L3.15918 11.5908C3.14486 11.6051 3.12695 11.6195 3.10547 11.6338C3.08398 11.6481 3.0625 11.6589 3.04102 11.666C2.97656 11.6875 2.91211 11.6911 2.84766 11.6768C2.7832 11.6696 2.72591 11.641 2.67578 11.5908L1.09668 10.0117C1.04655 9.96159 1.01432 9.9043 1 9.83984C0.992839 9.77539 1 9.71094 1.02148 9.64648C1.02865 9.625 1.03939 9.60352 1.05371 9.58203C1.06803 9.56055 1.08236 9.54264 1.09668 9.52832L4.4375 6.1875L1.09668 2.84668C1.08236 2.83236 1.06803 2.81445 1.05371 2.79297C1.03939 2.77148 1.02865 2.75 1.02148 2.72852C1 2.66406 0.992839 2.59961 1 2.53516C1.01432 2.4707 1.04655 2.41341 1.09668 2.36328L2.67578 0.78418C2.72591 0.734049 2.7832 0.705404 2.84766 0.698242C2.91211 0.683919 2.97656 0.6875 3.04102 0.708984C3.0625 0.716146 3.08398 0.726888 3.10547 0.741211C3.12695 0.755534 3.14486 0.769857 3.15918 0.78418L6.5 4.125L9.84082 0.78418C9.85514 0.769857 9.87305 0.755534 9.89453 0.741211C9.91602 0.726888 9.9375 0.716146 9.95898 0.708984C10.0234 0.6875 10.0879 0.683919 10.1523 0.698242C10.2168 0.705404 10.2741 0.734049 10.3242 0.78418L11.9033 2.36328C11.9535 2.41341 11.9821 2.4707 11.9893 2.53516C12.0036 2.59961 12 2.66406 11.9785 2.72852C11.9714 2.75 11.9606 2.77148 11.9463 2.79297C11.932 2.81445 11.9176 2.83236 11.9033 2.84668L8.5625 6.1875L11.9033 9.52832Z" fill="black"/>
+                            </svg>
+                          </div>
+                        </div>
                         <div class="card-body p-0">
-                          <div class="filters-body px-4 py-2">
+                          <div class="filters-body">
                             <div class="filters-types">
                               <h4>Types:</h4>
-                              <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
-                              <label class="btn" for="btn-check">Single toggle</label>
+
+                              <div class="filters-types_wrapper">
+                                <input type="checkbox" class="btn-check" id="btn-check-1">
+                                <label class="btn" for="btn-check-1">All</label>
+    
+                                <input type="checkbox" class="btn-check" id="btn-check-2">
+                                <label class="btn" for="btn-check-2">Kids</label>
+    
+                                <input type="checkbox" class="btn-check" id="btn-check-3">
+                                <label class="btn" for="btn-check-3">Financial</label>
   
-                              <input type="checkbox" class="btn-check" id="btn-check-2" autocomplete="off">
-                              <label class="btn" for="btn-check-2">Checked</label>
+                                <input type="checkbox" class="btn-check" id="btn-check-4">
+                                <label class="btn" for="btn-check-4">Identity protection</label>
+    
+                                <input type="checkbox" class="btn-check" id="btn-check-5">
+                                <label class="btn" for="btn-check-5">Merchandise</label>
+    
+                                <input type="checkbox" class="btn-check" id="btn-check-6">
+                                <label class="btn" for="btn-check-6">Subscription</label>
   
-                              <input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off">
-                              <label class="btn" for="btn-check-3">Disabled</label>
+                                <input type="checkbox" class="btn-check" id="btn-check-7">
+                                <label class="btn" for="btn-check-7">Product Trial</label>
+                              </div>
                             </div>
                           </div>
-                          <div class="filters-footer d-flex align-items-center justify-content-between px-4 py-2">
-                            <button type="button" class="btn btn-primary btn-sm">Show All Offers</button>
+                          <div class="filters-footer d-flex align-items-center justify-content-between">
+                            <button type="button" class="btn btn-green">Show All Offers</button>
                             <button type="button" class="btn btn-link">Reset All</button>
                           </div>
                         </div>
-                      </div>
+                      </dialog>
                     </form>
                   </div>
                 </div>
-                <div class="tab-content_body d-flex p-4">
-                  <div class="row">
+                <div class="tab-content_body">
+                  <div class="row card-row g-5">
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -203,16 +224,16 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -225,16 +246,16 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -247,16 +268,16 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -269,16 +290,16 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -291,16 +312,16 @@
                       </div>
                     </div>
                     <div class="col-12 col-md-2 col-md-4">
-                      <div class="card shadow mb-4">
+                      <div class="card">
                         <img src="./img/game.png" class="card-img-top">
-                        <div class="card-body">
-                          <span class="badge rounded-pill text-bg-warning mb-2">Android</span>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-                        <div class="card-footer">
-                          <a href="#" class="card-link d-flex align-items-center justify-content-between">
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
                             <span>Earn $10.00</span>
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -316,9 +337,9 @@
                 </div>
               </div>
               <div class="tab-content p-0" id="history">
-                <div class="container-fluid">
+                <div class="tab-content_body">
                   <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" width="100%" cellspacing="0">
                       <thead>
                         <tr>
                           <th>Offer Name</th>
@@ -339,9 +360,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -360,9 +381,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -381,9 +402,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -402,9 +423,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -423,9 +444,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -444,9 +465,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -465,9 +486,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -486,9 +507,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -507,9 +528,9 @@
                           <td>$100.00</td>
                           <td>10/10/2022</td>
                           <td>10/10/2022</td>
-                          <td>500</td>
-                          <td>5500</td>
-                          <td>100</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
                           <td>
                             <a href="#">
                               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
