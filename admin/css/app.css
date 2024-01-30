@@ -410,6 +410,10 @@ dialog .card-header h3 {
   gap: 1rem;
 }
 
+.filters-types + .filters-types {
+  margin-top: 1.875rem;
+}
+
 .btn-check+.btn,
 .btn-check+.btn:hover {
   border: 1px solid currentColor;
