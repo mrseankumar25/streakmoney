@@ -54,3 +54,6 @@ const logoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => document.body.classList.toggle('scrolled', !entry.isIntersecting))
 })
 if(logoContent) logoObserver.observe(logoContent)
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
