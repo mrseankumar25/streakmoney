@@ -29,7 +29,6 @@ body {
 
 .logoContent {
   border-right: 1px solid rgb(0 0 0 / 15%);
-  box-shadow: -3px 8px 8px 2px rgba(0 0 0 / 5%);
   grid-area: logoContent;
   position: relative;
   z-index: 2;
@@ -46,7 +45,7 @@ body {
 }
 
 .userContent {
-  box-shadow: 3px 8px 8px 2px rgba(0 0 0 / 5%);
+  box-shadow: 0 8px 8px 2px rgba(0 0 0 / 5%);
   grid-area: userContent;
   position: relative;
   z-index: 3;
@@ -745,6 +744,10 @@ ol>li::before {
 
   .logoContent {
     border-right: none;
+  }
+
+  .userContent {
+    box-shadow: none;
   }
 
   .wallet-nav-link {
