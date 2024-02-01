@@ -454,8 +454,11 @@ dialog .card-header h3 {
   border-radius: 0.625rem;
   font-size: 1.125rem;
   font-weight: 700;
-  color: #606060;
   padding: 0.9375rem 1.875rem;
+}
+
+.filters-footer .btn:not(.btn-green) {
+  color: #606060;
 }
 
 .content_img img {
@@ -813,14 +816,6 @@ ol>li::before {
     text-align: center;
   }
 
-  .content_header>h3 {
-    display: none;
-  }
-
-  .content_header>div {
-    flex: 1 1 100%;
-  }
-
   .filter-form {
     align-items: center;
     display: flex;
@@ -922,6 +917,14 @@ ol>li::before {
 }
 
 @media only screen and (max-width: 576px) {
+  .content_header>h3 {
+    display: none;
+  }
+
+  .content_header>div {
+    flex: 1 1 100%;
+  }
+
   .survey-content_body {
     padding: 2rem 1.875rem;
   }

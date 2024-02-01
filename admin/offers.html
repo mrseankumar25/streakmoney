@@ -133,6 +133,452 @@
       </ul>
     </aside>
     <div class="context">
+      <div class="container-fluid p-0">
+        <div class="card border-0 mb-4">
+          <div class="card-body p-0">
+            <content-tabs>
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="tab" href="#" data-target="#available">Available</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="tab" href="#" data-target="#history">History</a>
+                </li>
+              </ul>
+              <div class="tab-content p-0 tab-active" id="available">
+                <div class="content_header d-flex align-items-center justify-content-between border-bottom">
+                  <h3>Games</h3>
+                  <div class="ml-auto">
+                    <form action="" class="filter-form">
+                      <select id="inputState" class="form-select">
+                        <option selected disabled>Sort By</option>
+                        <option value="Recommended">Recommended</option>
+                        <option value="Newest">Newest</option>
+                        <option value="Hight to Low">Hight to Low</option>
+                        <option value="Low to High">Low to High</option>
+                      </select>
+
+                      <button type="button" class="btn btn-dialog" data-target="filters">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M2.5 12.1875V11.8728C2.5 11.1837 3.06141 10.625 3.7487 10.625H5.0013C5.69094 10.625 6.25 11.1835 6.25 11.8728V12.1875H14.3746C14.72 12.1875 15 12.4649 15 12.8125C15 13.1577 14.7203 13.4375 14.3746 13.4375H6.25V13.7522C6.25 14.4413 5.68859 15 5.0013 15H3.7487C3.05906 15 2.5 14.4415 2.5 13.7522V13.4375H0.625434C0.280016 13.4375 0 13.1601 0 12.8125C0 12.4673 0.279668 12.1875 0.625434 12.1875H2.5ZM12.5 8.125V8.43966C12.5 9.12882 11.9386 9.6875 11.2513 9.6875H9.9987C9.30906 9.6875 8.75 9.12896 8.75 8.43966V8.125H0.625434C0.280016 8.125 0 7.84758 0 7.5C0 7.15482 0.279668 6.875 0.625434 6.875H8.75V6.56034C8.75 5.87118 9.31141 5.3125 9.9987 5.3125H11.2513C11.9409 5.3125 12.5 5.87104 12.5 6.56034V6.875H14.3746C14.72 6.875 15 7.15242 15 7.5C15 7.84518 14.7203 8.125 14.3746 8.125H12.5ZM2.5 1.5625V1.24784C2.5 0.558679 3.06141 0 3.7487 0H5.0013C5.69094 0 6.25 0.558541 6.25 1.24784V1.5625H14.3746C14.72 1.5625 15 1.83992 15 2.1875C15 2.53268 14.7203 2.8125 14.3746 2.8125H6.25V3.12716C6.25 3.81632 5.68859 4.375 5.0013 4.375H3.7487C3.05906 4.375 2.5 3.81646 2.5 3.12716V2.8125H0.625434C0.280016 2.8125 0 2.53508 0 2.1875C0 1.84232 0.279668 1.5625 0.625434 1.5625H2.5ZM3.75 3.125H5V1.25H3.75V3.125ZM10 8.4375H11.25V6.5625H10V8.4375ZM3.75 13.75H5V11.875H3.75V13.75Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </button>
+                      <dialog class="dialog p-0" id="filters" title="Filter">
+                        <div class="card-header">
+                          <h3>Filter</h3>
+                          <div class="closeDialog">
+                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M11.9033 9.52832C11.9176 9.54264 11.932 9.56055 11.9463 9.58203C11.9606 9.60352 11.9714 9.625 11.9785 9.64648C12 9.71094 12.0036 9.77539 11.9893 9.83984C11.9821 9.9043 11.9535 9.96159 11.9033 10.0117L10.3242 11.5908C10.2741 11.641 10.2168 11.6696 10.1523 11.6768C10.0879 11.6911 10.0234 11.6875 9.95898 11.666C9.9375 11.6589 9.91602 11.6481 9.89453 11.6338C9.87305 11.6195 9.85514 11.6051 9.84082 11.5908L6.5 8.25L3.15918 11.5908C3.14486 11.6051 3.12695 11.6195 3.10547 11.6338C3.08398 11.6481 3.0625 11.6589 3.04102 11.666C2.97656 11.6875 2.91211 11.6911 2.84766 11.6768C2.7832 11.6696 2.72591 11.641 2.67578 11.5908L1.09668 10.0117C1.04655 9.96159 1.01432 9.9043 1 9.83984C0.992839 9.77539 1 9.71094 1.02148 9.64648C1.02865 9.625 1.03939 9.60352 1.05371 9.58203C1.06803 9.56055 1.08236 9.54264 1.09668 9.52832L4.4375 6.1875L1.09668 2.84668C1.08236 2.83236 1.06803 2.81445 1.05371 2.79297C1.03939 2.77148 1.02865 2.75 1.02148 2.72852C1 2.66406 0.992839 2.59961 1 2.53516C1.01432 2.4707 1.04655 2.41341 1.09668 2.36328L2.67578 0.78418C2.72591 0.734049 2.7832 0.705404 2.84766 0.698242C2.91211 0.683919 2.97656 0.6875 3.04102 0.708984C3.0625 0.716146 3.08398 0.726888 3.10547 0.741211C3.12695 0.755534 3.14486 0.769857 3.15918 0.78418L6.5 4.125L9.84082 0.78418C9.85514 0.769857 9.87305 0.755534 9.89453 0.741211C9.91602 0.726888 9.9375 0.716146 9.95898 0.708984C10.0234 0.6875 10.0879 0.683919 10.1523 0.698242C10.2168 0.705404 10.2741 0.734049 10.3242 0.78418L11.9033 2.36328C11.9535 2.41341 11.9821 2.4707 11.9893 2.53516C12.0036 2.59961 12 2.66406 11.9785 2.72852C11.9714 2.75 11.9606 2.77148 11.9463 2.79297C11.932 2.81445 11.9176 2.83236 11.9033 2.84668L8.5625 6.1875L11.9033 9.52832Z"
+                                fill="black" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="card-body p-0">
+                          <div class="filters-body">
+                            <div class="filters-types">
+                              <h4>Type:</h4>
+                              <div class="filters-types_wrapper">
+                                <input type="checkbox" class="btn-check" id="btn-type-1">
+                                <label class="btn" for="btn-type-1">All</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-2">
+                                <label class="btn" for="btn-type-2">Kids</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-3">
+                                <label class="btn" for="btn-type-3">Financial</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-4">
+                                <label class="btn" for="btn-type-4">Identity protection</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-5">
+                                <label class="btn" for="btn-type-5">Merchandise</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-6">
+                                <label class="btn" for="btn-type-6">Subscription</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-type-7">
+                                <label class="btn" for="btn-type-7">Product Trial</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filters-footer d-flex align-items-center justify-content-between">
+                            <button type="button" class="btn btn-green">Show All Offers</button>
+                            <button type="button" class="btn btn-link">Reset All</button>
+                          </div>
+                        </div>
+                      </dialog>
+                    </form>
+                  </div>
+                </div>
+                <div class="content_body">
+                  <div class="row card-row g-3 g-md-5">
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-xl-4">
+                      <div class="card">
+                        <div class="card-img-top">
+                          <img src="./img/game.jpeg" alt="Game">
+                        </div>
+                        <div class="product-card-body">
+                          <span class="badge">Android</span>
+                          <h5 class="card-title">Racing Game</h5>
+                          <p class="card-text">Browse our directory of valuable offers and fun games for your mobile.
+                          </p>
+                        </div>
+                        <div class="product-card-footer">
+                          <a href="./product.html" class="card-link">
+                            <span>Earn $10.00</span>
+                            <svg width="19" height="14" viewBox="0 0 19 14" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M18.5554 6.3255L12.6594 0.429467C12.2534 0.023511 11.5961 0.023511 11.2095 0.429467C10.8036 0.835423 10.8036 1.49269 11.2095 1.87931L15.3657 6.03553H1.52456C0.96395 6.03553 0.5 6.49948 0.5 7.06008C0.5 7.62069 0.96395 8.08464 1.52456 8.08464H15.3464L11.2095 12.2409C10.8036 12.6468 10.8036 13.3041 11.2095 13.6907C11.4028 13.884 11.6735 14 11.9441 14C12.2147 14 12.466 13.9033 12.6787 13.6907L18.594 7.77534C18.7874 7.58203 18.9033 7.31139 18.9033 7.04075C18.8647 6.78945 18.7487 6.51881 18.5554 6.3255Z"
+                                fill="currentColor"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content p-0" id="history">
+                <div class="content_body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>Offer Name</th>
+                          <th>Page</th>
+                          <th>Incentive</th>
+                          <th>Date Clicked</th>
+                          <th>Date Completed</th>
+                          <th>Pending Approval</th>
+                          <th>Redeemed</th>
+                          <th>Reversed</th>
+                          <th>Submit a Query</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dummy Offer</td>
+                          <td>ABCDE</td>
+                          <td>$100.00</td>
+                          <td>10/10/2022</td>
+                          <td>10/10/2022</td>
+                          <td class="light-color">500</td>
+                          <td class="light-color">5500</td>
+                          <td class="light-color">100</td>
+                          <td>
+                            <a href="#">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="16.2551" cy="16.0845" rx="15.7193" ry="15.7061" fill="#00AF4C"></ellipse>
+                                <path
+                                  d="M14.3052 24.1964L21.8033 16.4449L14.3052 8.69348L12.5566 10.5027L18.3047 16.4449L12.5566 22.3872L14.3052 24.1964Z"
+                                  fill="white"></path>
+                              </svg>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </content-tabs>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
