@@ -715,6 +715,27 @@ ol>li::before {
   gap: 1rem;
 }
 
+.product-card-header {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.product-card-header .price {
+  color: #00AF4C;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.product-card-footer .card-link .btn {
+  border-radius: 0.5em;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0.3em 1em;
+}
+
 @media only screen and (min-width: 991px) {
 
   .sidebar .active .nav-link,
