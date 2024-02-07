@@ -1088,12 +1088,15 @@ ol>li::before {
     grid-template-columns: 100%;
   }
 
-  .table-grid_col.table-grid_even {
-    background-color: rgb(247 245 220 / 34%);
+  .table-grid_col {
     box-shadow: none;
     display: flex;
     gap: 15px;
     justify-content: space-between;
+  }
+
+  .table-grid_col.table-grid_even {
+    background-color: rgb(247 245 220 / 34%);
   }
 
   .table_col-10 .table-grid_col:nth-child(10n + 10) {
