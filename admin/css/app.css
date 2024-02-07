@@ -1088,7 +1088,7 @@ ol>li::before {
     grid-template-columns: 100%;
   }
 
-  .table-grid_col {
+  .table-grid_col.table-grid_even {
     background-color: rgb(247 245 220 / 34%);
     box-shadow: none;
     display: flex;
