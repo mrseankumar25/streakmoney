@@ -1093,7 +1093,7 @@ ol>li::before {
     display: flex;
     gap: 15px;
     justify-content: space-between;
-    margin: 0 1px;
+    margin: 0 2px;
   }
 
   .table-grid_col.table-grid_even {
