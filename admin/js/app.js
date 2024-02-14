@@ -49,12 +49,6 @@ Array.from(closeDialogs).forEach(btn => {
   })
 })
 
-/* const logoContent = document.querySelector('.logoContent')
-const logoObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => document.body.classList.toggle('scrolled', !entry.isIntersecting))
-})
-if(logoContent) logoObserver.observe(logoContent) */
-
 let scrolled = 0
 window.addEventListener('scroll', (e) => {
   const scrollTop = window.scrollY;
