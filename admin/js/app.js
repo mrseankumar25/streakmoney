@@ -49,11 +49,30 @@ Array.from(closeDialogs).forEach(btn => {
   })
 })
 
-const logoContent = document.querySelector('.logoContent')
+/* const logoContent = document.querySelector('.logoContent')
 const logoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => document.body.classList.toggle('scrolled', !entry.isIntersecting))
 })
-if(logoContent) logoObserver.observe(logoContent)
+if(logoContent) logoObserver.observe(logoContent) */
+
+let scrolled = 0
+window.addEventListener('scroll', (e) => {
+  const scrollTop = window.scrollY;
+  const logoContent = document.querySelector('.logoContent')
+  console.log(logoContent.offsetHeight, logoContent.offsetTop, scrollTop, logoContent.offsetHeight + logoContent.offsetTop);
+  if(scrollTop > (logoContent.offsetHeight + logoContent.offsetTop)) {
+    
+    if(scrolled > scrollTop) {
+      document.body.classList.remove('scrolled')
+    } else {
+      document.body.classList.add('scrolled')
+    }
+
+    scrolled = scrollTop
+  } else {
+    document.body.classList.remove('scrolled')
+  }
+})
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
