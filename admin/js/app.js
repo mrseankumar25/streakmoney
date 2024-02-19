@@ -19,7 +19,7 @@ if(typeof ContentTabs !== 'function') {
           link.classList.add('active')
         
           if(this.querySelector('.tab-active')) this.querySelector('.tab-active').classList.remove('tab-active')
-          this.querySelector(link.dataset.target).classList.add('tab-active')
+          if(this.querySelector(link.dataset.target)) this.querySelector(link.dataset.target).classList.add('tab-active')
         })
       })
     }
@@ -53,7 +53,7 @@ let scrolled = 0
 window.addEventListener('scroll', (e) => {
   const scrollTop = window.scrollY;
   const logoContent = document.querySelector('.logoContent')
-  console.log(logoContent.offsetHeight, logoContent.offsetTop, scrollTop, logoContent.offsetHeight + logoContent.offsetTop);
+
   if(scrollTop > (logoContent.offsetHeight + logoContent.offsetTop)) {
     
     if(scrolled > scrollTop) {

@@ -867,6 +867,101 @@ ol>li::before {
   padding-top: 1.125rem;
 }
 
+.p-big .table-grid_col {
+  align-items: center;
+  font-size: 0.9375rem;
+  padding: 0.6875rem 1.875rem;
+}
+
+.p-big .table-grid_col:not(.table-grid_heading) {
+  display: flex;
+}
+
+.p-big .table-grid_heading {
+  font-size: 1.125rem;
+  padding: 1.16em 1.72em 0.55em;
+}
+
+.p-big .nameWraper {
+  align-items: center;
+  display: flex;
+  gap: 0.625em;
+}
+
+.p-big .table-grid_col .nameImage>* {
+  width: 2.5rem;
+}
+
+.p-big .nameInfo .name {
+  color: #00AF4C;
+  font-size: .93em;
+  font-weight: 600;
+}
+
+.p-big .nameInfo .nameAddress {
+  font-size: .86rem;
+}
+
+.borderBox {
+  border: 1px solid #D7D7D7;
+  border-radius: 15px;
+  margin-top: 3.75rem;
+  overflow: hidden;
+}
+
+.borderBoxContext {
+  padding: 2.5rem;
+}
+
+.borderBoxHeading {
+  font-size: 1.122rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.borderBoxRow {
+  align-items: center;
+  display: flex;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  max-width: 75%;
+}
+
+.borderBoxCol:empty {
+  align-self: stretch;
+  background-color: #D7D7D7;
+  width: 1px;
+}
+
+.borderBoxCol {
+  align-items: center;
+  display: flex;
+  gap: 0.8125rem;
+}
+
+.borderBoxColImage svg {
+  fill: var(--color);
+}
+
+.borderBoxColImage circle {
+  fill: var(--bg);
+}
+
+.borderBoxColContext {
+  color: var(--color);
+}
+
+.borderBoxImage {
+  margin-top: -5%;
+}
+
+.borderBoxImage>* {
+  display: block;
+}
+
 @media only screen and (min-width: 991px) {
 
   .sidebar .active .nav-link,
@@ -1151,5 +1246,47 @@ ol>li::before {
 
   .from_grid {
     --col-gap: 15px;
+  }
+
+  .mobi-full .nav-item {
+    flex: 1 1 100%;
+  }
+  
+  .mobi-full.nav-tabs .nav-link {
+    border-bottom: 1px solid #c2c2c2;
+    border-radius: var(--bs-nav-tabs-border-radius);
+    font-size: 1.16rem;
+  }
+
+  .nav.nav-tabs.mobi-full {
+    gap: 0.5rem;
+    padding: 0.66rem 1rem;
+  }
+
+  .mobi-full.nav-tabs .nav-link.active {
+    border-bottom: 1px solid #00AF4C;
+  }
+
+  .p-big .table-grid_col {
+    justify-content: start;
+    gap: 2.5rem;
+  }
+
+  .p-big .table-grid_col::before {
+    flex: 0 0 50%;
+  }
+
+  .borderBoxRow {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .borderBoxCol:empty {
+    height: 1px;
+    width: 100%;
+  }
+
+  .nameImage {
+    display: none;
   }
 }
