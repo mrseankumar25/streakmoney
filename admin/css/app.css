@@ -867,6 +867,21 @@ ol>li::before {
   padding-top: 1.125rem;
 }
 
+.headerBox {
+  background-color: #D7D7D7;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 2.5rem;
+}
+
+.headerBox h1 {
+  color: #000;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
 .p-big .table-grid_col {
   align-items: center;
   font-size: 0.9375rem;
@@ -906,7 +921,6 @@ ol>li::before {
   border: 1px solid #D7D7D7;
   border-radius: 15px;
   margin-top: 3.75rem;
-  overflow: hidden;
 }
 
 .borderBoxContext {
@@ -1227,6 +1241,27 @@ ol>li::before {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .headerBox {
+    padding: 1.6rem;
+    text-align: center;
+  }
+
+  .mobi-full .nav-item {
+    flex: 1 1 100%;
+  }
+
+  .mobi-full.nav-tabs .nav-link {
+    border-bottom: 1px solid #c2c2c2;
+    border-radius: var(--bs-nav-tabs-border-radius);
+    font-size: 1.16rem;
+  }
+
+  .borderBox {
+    text-align: center;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .content_header>h3 {
     display: none;
@@ -1246,16 +1281,6 @@ ol>li::before {
 
   .from_grid {
     --col-gap: 15px;
-  }
-
-  .mobi-full .nav-item {
-    flex: 1 1 100%;
-  }
-  
-  .mobi-full.nav-tabs .nav-link {
-    border-bottom: 1px solid #c2c2c2;
-    border-radius: var(--bs-nav-tabs-border-radius);
-    font-size: 1.16rem;
   }
 
   .nav.nav-tabs.mobi-full {
@@ -1282,6 +1307,7 @@ ol>li::before {
   }
 
   .borderBoxCol:empty {
+    display: none;
     height: 1px;
     width: 100%;
   }
