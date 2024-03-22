@@ -25,7 +25,13 @@
       max-width: 680px;
       outline: none;
       padding: 0;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       width: 100%;
+    }
+
+    .popup-dialog::-webkit-scrollbar {
+      display: none;
     }
 
     .popup-dialog .popup-dialog::backdrop {
