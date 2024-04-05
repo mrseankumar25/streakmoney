@@ -25,6 +25,11 @@ header img {
   line-height: 1.25;
 }
 
+.offer-tabs__form {
+  padding: 1.5rem 0;
+  /* padding-top: 2rem; */
+}
+
 .tabs-header {
   align-items: center;
   display: flex;
@@ -156,8 +161,18 @@ header img {
   padding: 1.25rem 0.75rem;
 }
 
+.tab-content__row .card-img-top {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding-bottom: 40%;
+  position: relative;
+}
+
 .tab-content__row .card-img-top>* {
-  height: auto;
+  height: 100%;
+  left: auto;
+  position: absolute;
+  top: auto;
   width: 100%;
 }
 
@@ -314,12 +329,21 @@ dialog .card-header h3 {
     text-align: center;
   }
 
-  .tabs-header > * {
+  .offer-tabs__form {
+    padding-top: 0.5rem;
+  }
+
+  .tabs-body {
+    box-shadow: 0 0 0 1px #EDEDED;
+    margin-top: 0.75rem;
+  }
+
+  .tabs-header>* {
     gap: 0.4rem;
     width: 100%;
   }
 
-  .tab-content__header > * {
+  .tab-content__header>* {
     width: 100%;
   }
 
@@ -336,5 +360,15 @@ dialog .card-header h3 {
   .tab-content__row {
     gap: 1rem;
     grid-template-columns: 100%;
+  }
+
+  .tab-content__row .card {
+    padding: 1rem 0.75rem;
+  }
+
+  .card-text__wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
