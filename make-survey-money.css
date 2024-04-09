@@ -58,6 +58,10 @@ header img {
   text-transform: uppercase;
 }
 
+.tabs-link::before {
+  content: attr(data-desktop);
+}
+
 .tabs-link.active {
   background-color: var(--orange);
   border-color: var(--orange);
@@ -152,7 +156,7 @@ header img {
 .tab-content__row {
   display: grid;
   gap: 2.125rem 4rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .tab-content__row .card {
@@ -348,9 +352,12 @@ dialog .card-header h3 {
   }
 
   .tabs-link {
-    border-radius: 0.7rem;
+    flex: 1 1 auto;
     text-align: center;
-    width: 100%;
+  }
+
+  .tabs-link::before {
+    content: attr(data-mobile);
   }
 
   .tab-content__body {
