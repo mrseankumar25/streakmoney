@@ -255,6 +255,10 @@ dialog .card-header h3 {
   margin: 0;
 }
 
+.closeDialog {
+  cursor: pointer;
+}
+
 .form-check-input:checked {
   background-color: #17C05B;
   border-color: #17C05B;
