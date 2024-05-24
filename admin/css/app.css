@@ -1239,6 +1239,40 @@ ol>li::before {
   .table-grid_col svg {
     margin-right: 0;
   }
+
+  .table-mobile .table-grid_heading {
+    font-size: 0.8em;
+    padding: 1em 0.75em !important;
+  }
+  
+  .table-grid.table-mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .table-mobile .table-grid_col {
+    align-items: center;
+    border: none !important;
+    box-shadow: inset 0 0 0 0.5px var(--bs-border-color);
+    display: flex;
+    margin: 0;
+  }
+  
+  .table-mobile.table_col-3 .table-grid_col:nth-child(3n + 3),
+  .table-mobile.table_col-3 .table-grid_col:nth-child(3n + 4) {
+    padding: .5em 0.75em;
+  }
+  
+  .table-mobile .table-grid_col::before {
+    display: none;
+  }
+  
+  .table-mobile .table-grid_col:not(.table-grid_heading, .table-grid_even) {
+    background: rgb(247 245 220 / 34%);
+  }
+  
+  .table-mobile .table-grid_col.table-grid_even {
+    background-color: transparent;
+  }
 }
 
 @media only screen and (max-width: 767px) {
